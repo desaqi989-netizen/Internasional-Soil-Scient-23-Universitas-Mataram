@@ -16,7 +16,7 @@
             font-family: Arial, sans-serif;
         }
 
-        /* ================= DESKTOP (TIDAK DIUBAH) ================= */
+        /* ================= DESKTOP (TETAP ASLI) ================= */
 
         .hero {
             position: relative;
@@ -119,35 +119,37 @@
 
         @media (max-width: 768px) {
 
-            /* HERO DIPERKECIL */
+            /* HERO FULL SAMPAI SUDUT */
             .hero {
-                height: 32vh;
+                height: 34vh;
+                width: 95%;              /* sedikit diperkecil lebarnya */
+                margin: 0 auto;
+                border-radius: 0;
             }
 
             .hero img {
                 width: 100%;
                 height: 100%;
-                object-fit: contain;
+                object-fit: cover;       /* full sampai sudut */
                 animation: gerakHP 3s ease-in-out infinite alternate;
             }
 
             @keyframes gerakHP {
                 0% { transform: translateY(0); }
-                100% { transform: translateY(-20px); }
+                100% { transform: translateY(-25px); }
             }
 
-            /* SHAPE & TULISAN DIPERKECIL */
+            /* SHAPE & TULISAN NAIK SEDIKIT */
             .judul-box {
                 width: 70%;
-                padding: 5px 10px;
-                bottom: 8px;
-                border-radius: 10px;
+                padding: 6px 12px;
+                bottom: 18px;   /* dinaikkan */
+                border-radius: 12px;
             }
 
             .judul {
-                font-size: 12px;
+                font-size: 13px;
                 letter-spacing: 0.5px;
-                line-height: 1.3;
             }
 
             /* LAYOUT VERTIKAL */
@@ -159,7 +161,7 @@
                 margin: 15px auto 35px auto;
             }
 
-            /* FOTO KECIL AUTO SCROLL */
+            /* FOTO KECIL LEBIH CEPAT */
             .sidebar {
                 width: 100%;
                 overflow: hidden;
@@ -168,7 +170,7 @@
             .sidebar-track {
                 display: flex;
                 gap: 15px;
-                animation: autoScroll 22s linear infinite;
+                animation: autoScroll 14s linear infinite; /* dipercepat */
             }
 
             .sidebar img {
@@ -210,7 +212,6 @@
 
     <div class="container-side">
 
-        <!-- FOTO KIRI -->
         <div class="sidebar">
             <div class="sidebar-track">
                 <img src="Foto2.jpeg">
@@ -220,7 +221,6 @@
                 <img src="Foto6.jpeg">
                 <img src="Foto7.jpeg">
 
-                <!-- DUPLIKAT UNTUK LOOP -->
                 <img src="Foto2.jpeg">
                 <img src="Foto3.jpeg">
                 <img src="Foto4.jpeg">
@@ -230,14 +230,12 @@
             </div>
         </div>
 
-        <!-- MENU -->
         <div class="menu-tengah">
             <a href="#">Home</a>
             <a href="#">Timetable</a>
             <a href="#">Subject</a>
         </div>
 
-        <!-- FOTO KANAN -->
         <div class="sidebar">
             <div class="sidebar-track">
                 <img src="Foto8.jpeg">
@@ -247,7 +245,6 @@
                 <img src="Foto12.jpeg">
                 <img src="Foto13.jpeg">
 
-                <!-- DUPLIKAT -->
                 <img src="Foto8.jpeg">
                 <img src="Foto9.jpeg">
                 <img src="Foto10.jpeg">
