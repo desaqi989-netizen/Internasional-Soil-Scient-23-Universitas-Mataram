@@ -121,64 +121,78 @@
         @media (max-width: 768px) {
 
             .hero {
-                height: 40vh;
+                height: 35vh;
             }
 
             .hero img {
-                height: 120%;
-                object-fit: cover;
-                animation: gerakHP 3s ease-in-out infinite alternate;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                animation: gerakHP 2.5s ease-in-out infinite alternate;
             }
 
             @keyframes gerakHP {
                 0% { transform: translateY(0); }
-                100% { transform: translateY(-80px); }
+                100% { transform: translateY(-30px); }
             }
 
             .judul-box {
-                padding: 8px 18px;
-                bottom: 15px;
-                border-radius: 15px;
+                width: 85%;
+                padding: 6px 14px;
+                bottom: 10px;
+                border-radius: 12px;
+                text-align: center;
             }
 
             .judul {
-                font-size: 16px;
-                letter-spacing: 1px;
-                text-align: center;
+                font-size: 14px;
+                letter-spacing: 0.5px;
+                line-height: 1.4;
             }
 
             .container-side {
                 flex-direction: column;
                 align-items: center;
-                gap: 30px;
+                gap: 25px;
                 width: 100%;
-                margin: 25px auto 50px auto;
+                margin: 20px auto 40px auto;
             }
 
+            /* AUTO SCROLL FOTO KECIL */
             .sidebar {
                 width: 95%;
-                flex-direction: row;
-                overflow-x: auto;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .sidebar-track {
+                display: flex;
                 gap: 12px;
-                padding-bottom: 10px;
+                animation: autoScroll 18s linear infinite;
             }
 
             .sidebar img {
-                width: 140px;
-                height: 100px;
+                width: 130px;
+                height: 90px;
                 flex-shrink: 0;
+                border-radius: 10px;
+            }
+
+            @keyframes autoScroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
             }
 
             .menu-tengah {
                 width: 100%;
-                gap: 20px;
+                gap: 18px;
             }
 
             .menu-tengah a {
                 width: 80%;
-                height: 50px;
-                font-size: 16px;
-                border-radius: 30px;
+                height: 48px;
+                font-size: 15px;
+                border-radius: 25px;
             }
         }
 
@@ -195,28 +209,51 @@
 
     <div class="container-side">
 
+        <!-- FOTO KIRI -->
         <div class="sidebar">
-            <img src="Foto2.jpeg">
-            <img src="Foto3.jpeg">
-            <img src="Foto4.jpeg">
-            <img src="Foto5.jpeg">
-            <img src="Foto6.jpeg">
-            <img src="Foto7.jpeg">
+            <div class="sidebar-track">
+                <img src="Foto2.jpeg">
+                <img src="Foto3.jpeg">
+                <img src="Foto4.jpeg">
+                <img src="Foto5.jpeg">
+                <img src="Foto6.jpeg">
+                <img src="Foto7.jpeg">
+
+                <!-- DUPLIKAT UNTUK LOOP HALUS -->
+                <img src="Foto2.jpeg">
+                <img src="Foto3.jpeg">
+                <img src="Foto4.jpeg">
+                <img src="Foto5.jpeg">
+                <img src="Foto6.jpeg">
+                <img src="Foto7.jpeg">
+            </div>
         </div>
 
+        <!-- MENU -->
         <div class="menu-tengah">
             <a href="#">Home</a>
             <a href="#">Timetable</a>
             <a href="#">Subject</a>
         </div>
 
+        <!-- FOTO KANAN -->
         <div class="sidebar">
-            <img src="Foto8.jpeg">
-            <img src="Foto9.jpeg">
-            <img src="Foto10.jpeg">
-            <img src="Foto11.jpeg">
-            <img src="Foto12.jpeg">
-            <img src="Foto13.jpeg">
+            <div class="sidebar-track">
+                <img src="Foto8.jpeg">
+                <img src="Foto9.jpeg">
+                <img src="Foto10.jpeg">
+                <img src="Foto11.jpeg">
+                <img src="Foto12.jpeg">
+                <img src="Foto13.jpeg">
+
+                <!-- DUPLIKAT -->
+                <img src="Foto8.jpeg">
+                <img src="Foto9.jpeg">
+                <img src="Foto10.jpeg">
+                <img src="Foto11.jpeg">
+                <img src="Foto12.jpeg">
+                <img src="Foto13.jpeg">
+            </div>
         </div>
 
     </div>
