@@ -17,6 +17,8 @@
             font-family: Arial, sans-serif;
         }
 
+        /* ================= DESKTOP (TIDAK DIUBAH) ================= */
+
         .hero {
             position: relative;
             width: 100%;
@@ -82,8 +84,6 @@
             box-shadow: 0 8px 18px rgba(0,0,0,0.5);
         }
 
-        /* ===== MENU TENGAH ===== */
-
         .menu-tengah {
             width: 280px;
             display: flex;
@@ -94,15 +94,15 @@
         }
 
         .menu-tengah a {
-            width: 220px;              /* lebar sama */
-            height: 70px;              /* tinggi sama */
+            width: 220px;
+            height: 70px;
             display: flex;
             align-items: center;
-            justify-content: center;   /* teks benar-benar tengah */
+            justify-content: center;
             text-decoration: none;
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: 24px;           /* ukuran font sama */
+            font-size: 24px;
             color: white;
             background-color: #7b4f2c;
             border-radius: 40px;
@@ -116,18 +116,41 @@
             transform: scale(1.08);
         }
 
-        /* ===== VERSI HP ===== */
+        /* ================== VERSI HP ================== */
 
         @media (max-width: 768px) {
 
-            .container-side {
-                flex-direction: column;
-                gap: 40px;
+            .hero {
+                height: 45vh; /* lebih pendek supaya pas layar HP */
             }
 
-            .menu-tengah {
+            .hero img {
+                height: 180%; /* tidak terlalu panjang */
+                animation: gerakHP 6s ease-in-out infinite alternate;
+            }
+
+            @keyframes gerakHP {
+                0% { transform: translateY(0); }
+                100% { transform: translateY(-200px); } /* gerak disesuaikan */
+            }
+
+            .judul-box {
+                padding: 10px 20px;
+                bottom: 20px;
+                border-radius: 20px;
+            }
+
+            .judul {
+                font-size: 18px;
+                letter-spacing: 1px;
+                text-align: center;
+            }
+
+            .container-side {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
                 width: 100%;
-                gap: 25px;
             }
 
             .sidebar {
@@ -138,9 +161,20 @@
             }
 
             .sidebar img {
-                width: 150px;
-                height: 110px;
+                width: 140px;
+                height: 100px;
                 flex-shrink: 0;
+            }
+
+            .menu-tengah {
+                width: 100%;
+                gap: 20px;
+            }
+
+            .menu-tengah a {
+                width: 80%;
+                height: 55px;
+                font-size: 18px;
             }
         }
 
@@ -157,7 +191,6 @@
 
     <div class="container-side">
 
-        <!-- FOTO KIRI -->
         <div class="sidebar">
             <img src="Foto2.jpeg">
             <img src="Foto3.jpeg">
@@ -167,14 +200,12 @@
             <img src="Foto7.jpeg">
         </div>
 
-        <!-- MENU TENGAH -->
         <div class="menu-tengah">
             <a href="#">Home</a>
             <a href="#">Timetable</a>
             <a href="#">Subject</a>
         </div>
 
-        <!-- FOTO KANAN -->
         <div class="sidebar">
             <img src="Foto8.jpeg">
             <img src="Foto9.jpeg">
