@@ -6,10 +6,10 @@
     <meta name="keywords" content="soil science, ilmu tanah, internasional soil">
     <meta name="author" content="Nama Kamu">
 
-    <!-- Supaya responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -52,10 +52,14 @@
         }
 
         .judul {
-            font-family: 'Pacifico', cursive;
-            font-size: 55px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: 2px;
             color: white;
+            text-transform: uppercase;
             margin: 0;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
         }
 
         .container-side {
@@ -65,19 +69,21 @@
             margin: 40px auto 60px auto;
         }
 
+        /* SIDEBAR DIPERLEBAR */
         .sidebar {
-            width: 130px;
+            width: 200px; /* lebih lebar */
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
 
+        /* FOTO DIPERPANJANG */
         .sidebar img {
             width: 100%;
-            height: 90px;
+            height: 140px; /* lebih tinggi */
             object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+            border-radius: 18px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.5);
         }
 
         /* ================= VERSI HP ================= */
@@ -95,7 +101,6 @@
                 animation: gerakHP 6s ease-in-out infinite alternate;
             }
 
-            /* Animasi lebih pendek untuk HP */
             @keyframes gerakHP {
                 0% { transform: translateY(0); }
                 100% { transform: translateY(-150px); }
@@ -121,15 +126,16 @@
             }
 
             .sidebar {
-                width: 90%;
+                width: 95%;
                 flex-direction: row;
                 overflow-x: auto;
-                gap: 10px;
+                gap: 15px;
             }
 
+            /* FOTO VERSI HP LEBIH BESAR */
             .sidebar img {
-                width: 120px;
-                height: 80px;
+                width: 150px;
+                height: 110px;
                 flex-shrink: 0;
             }
         }
