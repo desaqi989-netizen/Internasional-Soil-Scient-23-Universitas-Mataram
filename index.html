@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internasional Soil Sciens</title>
+    <meta name="description" content="Website tentang Internasional Soil Science dan ilmu tanah">
+    <meta name="keywords" content="soil science, ilmu tanah, internasional soil">
+    <meta name="author" content="Nama Kamu">
+
+    <!-- Supaya responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #4b3222;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ================= DESKTOP ================= */
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 250%;
+            object-fit: cover;
+            filter: brightness(65%);
+            animation: gerakAtasBawah 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes gerakAtasBawah {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-600px); }
+        }
+
+        .judul-box {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(123, 79, 44, 0.85);
+            padding: 15px 40px;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .judul {
+            font-family: 'Pacifico', cursive;
+            font-size: 55px;
+            color: white;
+            margin: 0;
+        }
+
+        .container-side {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin: 40px auto 60px auto;
+        }
+
+        .sidebar {
+            width: 130px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar img {
+            width: 100%;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+        }
+
+        /* ================= VERSI HP ================= */
+
+        @media (max-width: 768px) {
+
+            .hero {
+                height: 300px;
+            }
+
+            .hero img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                animation: gerakHP 6s ease-in-out infinite alternate;
+            }
+
+            /* Animasi lebih pendek untuk HP */
+            @keyframes gerakHP {
+                0% { transform: translateY(0); }
+                100% { transform: translateY(-150px); }
+            }
+
+            .judul {
+                font-size: 28px;
+                text-align: center;
+            }
+
+            .judul-box {
+                bottom: 20px;
+                padding: 10px 20px;
+                width: 80%;
+                text-align: center;
+            }
+
+            .container-side {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                width: 100%;
+            }
+
+            .sidebar {
+                width: 90%;
+                flex-direction: row;
+                overflow-x: auto;
+                gap: 10px;
+            }
+
+            .sidebar img {
+                width: 120px;
+                height: 80px;
+                flex-shrink: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <img src="Foto1.jpeg">
+        <div class="judul-box">
+            <h1 class="judul">Internasional Soil Sciens</h1>
+        </div>
+    </div>
+
+    <div class="container-side">
+
+        <div class="sidebar">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Soil_texture.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Soil_horizon.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Soil_structure.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Soil_layers.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Soil_sample.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Soil_profile.jpg">
+        </div>
+
+        <div class="sidebar">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Soil_texture.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Soil_horizon.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Soil_structure.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Soil_layers.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Soil_sample.jpg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Soil_profile.jpg">
+        </div>
+
+    </div>
+
+</body>
+</html>
