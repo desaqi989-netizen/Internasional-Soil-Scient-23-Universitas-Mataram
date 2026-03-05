@@ -14,25 +14,34 @@ body{
 
 /* ================= DESKTOP ================= */
 
+@media(min-width:769px){
+
 .hero{
     position:relative;
-    width:100%;
-    height:60vh;
+    width:90%;
+    height:75vh;
+    margin:60px auto; /* ruang sendiri */
+    border-radius:25px;
     overflow:hidden;
+    box-shadow:0 25px 60px rgba(0,0,0,0.5); /* efek cinematic */
 }
 
 .hero img{
     width:100%;
     height:100%;
-    object-fit:cover; /* TIDAK KEPOTONG */
-    filter:brightness(65%);
-    animation:gerakDesktop 6s ease-in-out infinite alternate;
+    object-fit:cover;
+    filter:brightness(70%);
+    animation:zoomCinematic 8s ease-in-out infinite alternate;
 }
 
-@keyframes gerakDesktop{
-    0%{transform:translateY(0);}
-    100%{transform:translateY(-40px);}
+@keyframes zoomCinematic{
+    0%{transform:scale(1);}
+    100%{transform:scale(1.08);}
 }
+
+}
+
+/* ================= HERO UMUM ================= */
 
 .judul-box{
     position:absolute;
@@ -101,10 +110,11 @@ body{
 @media(max-width:768px){
 
 .hero{
-    height:70vh; /* LEBIH PANJANG */
+    height:70vh;
 }
 
 .hero img{
+    width:100%;
     height:100%;
     object-fit:cover;
     animation:gerakHP 5s ease-in-out infinite alternate;
@@ -117,7 +127,7 @@ body{
 
 .judul-box{
     width:85%;
-    bottom:60px; /* NAIK */
+    bottom:60px;
     padding:10px;
 }
 
@@ -126,7 +136,6 @@ body{
     text-align:center;
 }
 
-/* SIDEBAR JADI HORIZONTAL TANPA DOBEL DI DESKTOP */
 .sidebar{
     flex-direction:row;
     overflow:hidden;
@@ -144,7 +153,6 @@ body{
     flex-shrink:0;
 }
 
-/* SEMBUNYIKAN FOTO ASLI DI HP */
 .sidebar > img{
     display:none;
 }
@@ -171,6 +179,7 @@ body{
 }
 
 }
+
 </style>
 </head>
 <body>
