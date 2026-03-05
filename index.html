@@ -12,74 +12,76 @@ body{
     font-family:Arial, sans-serif;
 }
 
-/* ===================== DESKTOP ONLY ===================== */
-.desktop{
-    display:block;
-}
-.mobile{
-    display:none;
-}
+/* ================= DESKTOP ================= */
 
-.hero-desktop{
+.hero{
     position:relative;
+    width:100%;
     height:60vh;
     overflow:hidden;
 }
-.hero-desktop img{
+
+.hero img{
     width:100%;
-    height:250%;
-    object-fit:cover;
+    height:100%;
+    object-fit:cover; /* TIDAK KEPOTONG */
     filter:brightness(65%);
-    animation:gerakDesktop 4s ease-in-out infinite alternate;
-}
-@keyframes gerakDesktop{
-    0%{transform:translateY(0);}
-    100%{transform:translateY(-600px);}
+    animation:gerakDesktop 6s ease-in-out infinite alternate;
 }
 
-.judul-desktop{
+@keyframes gerakDesktop{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-40px);}
+}
+
+.judul-box{
     position:absolute;
     bottom:40px;
     left:50%;
     transform:translateX(-50%);
-    background:rgba(123,79,44,0.85);
+    background:rgba(123,79,44,0.9);
     padding:15px 40px;
     border-radius:25px;
 }
-.judul-desktop h1{
+
+.judul{
     font-family:'Montserrat',sans-serif;
-    color:white;
     font-size:30px;
+    color:white;
     margin:0;
     text-transform:uppercase;
 }
 
-.container-desktop{
+.container{
     display:flex;
     justify-content:space-between;
     width:90%;
     margin:40px auto;
 }
-.sidebar-desktop{
+
+.sidebar{
     width:200px;
     display:flex;
     flex-direction:column;
     gap:20px;
 }
-.sidebar-desktop img{
+
+.sidebar img{
     width:100%;
     height:140px;
     object-fit:cover;
     border-radius:18px;
 }
-.menu-desktop{
+
+.menu{
     width:280px;
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 }
-.menu-desktop a{
+
+.menu a{
     width:220px;
     height:70px;
     display:flex;
@@ -94,88 +96,78 @@ body{
     border-radius:40px;
 }
 
-/* ===================== MOBILE ONLY ===================== */
+/* ================= MOBILE ================= */
+
 @media(max-width:768px){
 
-.desktop{display:none;}
-.mobile{display:block;}
+.hero{
+    height:70vh; /* LEBIH PANJANG */
+}
 
-.hero-mobile{
-    position:relative;
-    height:65vh;
-    overflow:hidden;
-}
-.hero-mobile img{
-    width:100%;
-    height:180%;
+.hero img{
+    height:100%;
     object-fit:cover;
-    animation:gerakHP 3s ease-in-out infinite alternate;
+    animation:gerakHP 5s ease-in-out infinite alternate;
 }
+
 @keyframes gerakHP{
     0%{transform:translateY(0);}
-    100%{transform:translateY(-80px);}
+    100%{transform:translateY(-60px);}
 }
 
-.judul-mobile{
-    position:absolute;
-    bottom:70px; /* NAIK */
-    left:50%;
-    transform:translateX(-50%);
-    background:#7b4f2c;
-    width:85%; /* FULL */
-    text-align:center;
+.judul-box{
+    width:85%;
+    bottom:60px; /* NAIK */
     padding:10px;
-    border-radius:15px;
-}
-.judul-mobile h1{
-    font-family:'Montserrat',sans-serif;
-    font-size:18px;
-    color:white;
-    margin:0;
 }
 
-/* SCROLL FOTO CEPAT */
-.scroll{
-    overflow:hidden;
-    margin:25px 0;
+.judul{
+    font-size:18px;
+    text-align:center;
 }
-.track{
+
+/* SIDEBAR JADI HORIZONTAL TANPA DOBEL DI DESKTOP */
+.sidebar{
+    flex-direction:row;
+    overflow:hidden;
+}
+
+.sidebar-track{
     display:flex;
     gap:15px;
-    animation:scrollCepat 8s linear infinite;
+    animation:scrollCepat 10s linear infinite;
 }
-.track img{
+
+.sidebar img{
     width:170px;
     height:120px;
-    border-radius:18px;
-    object-fit:cover;
     flex-shrink:0;
 }
+
+/* SEMBUNYIKAN FOTO ASLI DI HP */
+.sidebar > img{
+    display:none;
+}
+
 @keyframes scrollCepat{
     from{transform:translateX(0);}
     to{transform:translateX(-50%);}
 }
 
-.menu-mobile{
-    display:flex;
+.container{
     flex-direction:column;
     align-items:center;
-    gap:25px;
-    margin:40px 0;
+    gap:40px;
 }
-.menu-mobile a{
+
+.menu{
+    gap:25px;
+}
+
+.menu a{
     width:85%;
     height:60px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    font-family:'Montserrat',sans-serif;
-    font-weight:900;
     font-size:18px;
-    color:white;
-    background:#7b4f2c;
-    border-radius:35px;
 }
 
 }
@@ -183,88 +175,49 @@ body{
 </head>
 <body>
 
-<!-- ================= DESKTOP ================= -->
-<div class="desktop">
-
-<div class="hero-desktop">
-<img src="Foto1.jpeg">
-<div class="judul-desktop">
-<h1>Internasional Soil Sciens</h1>
-</div>
+<div class="hero">
+    <img src="Foto1.jpeg">
+    <div class="judul-box">
+        <h1 class="judul">Internasional Soil Sciens</h1>
+    </div>
 </div>
 
-<div class="container-desktop">
-<div class="sidebar-desktop">
-<img src="Foto2.jpeg">
-<img src="Foto3.jpeg">
-<img src="Foto4.jpeg">
-<img src="Foto5.jpeg">
-<img src="Foto6.jpeg">
-<img src="Foto7.jpeg">
-</div>
+<div class="container">
 
-<div class="menu-desktop">
-<a href="#">Home</a>
-<a href="#">Timetable</a>
-<a href="#">Subject</a>
-</div>
+    <!-- FOTO KIRI -->
+    <div class="sidebar">
+        <div class="sidebar-track">
+            <img src="Foto2.jpeg">
+            <img src="Foto3.jpeg">
+            <img src="Foto4.jpeg">
+            <img src="Foto5.jpeg">
+            <img src="Foto6.jpeg">
+            <img src="Foto7.jpeg">
+            <img src="Foto2.jpeg">
+            <img src="Foto3.jpeg">
+        </div>
+    </div>
 
-<div class="sidebar-desktop">
-<img src="Foto8.jpeg">
-<img src="Foto9.jpeg">
-<img src="Foto10.jpeg">
-<img src="Foto11.jpeg">
-<img src="Foto12.jpeg">
-<img src="Foto13.jpeg">
-</div>
-</div>
-</div>
+    <!-- MENU -->
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Timetable</a>
+        <a href="#">Subject</a>
+    </div>
 
-<!-- ================= MOBILE ================= -->
-<div class="mobile">
-
-<div class="hero-mobile">
-<img src="Foto1.jpeg">
-<div class="judul-mobile">
-<h1>Internasional Soil Sciens</h1>
-</div>
-</div>
-
-<div class="scroll">
-<div class="track">
-<img src="Foto2.jpeg">
-<img src="Foto3.jpeg">
-<img src="Foto4.jpeg">
-<img src="Foto5.jpeg">
-<img src="Foto6.jpeg">
-<img src="Foto7.jpeg">
-<img src="Foto2.jpeg">
-<img src="Foto3.jpeg">
-<img src="Foto4.jpeg">
-<img src="Foto5.jpeg">
-</div>
-</div>
-
-<div class="menu-mobile">
-<a href="#">Home</a>
-<a href="#">Timetable</a>
-<a href="#">Subject</a>
-</div>
-
-<div class="scroll">
-<div class="track">
-<img src="Foto8.jpeg">
-<img src="Foto9.jpeg">
-<img src="Foto10.jpeg">
-<img src="Foto11.jpeg">
-<img src="Foto12.jpeg">
-<img src="Foto13.jpeg">
-<img src="Foto8.jpeg">
-<img src="Foto9.jpeg">
-<img src="Foto10.jpeg">
-<img src="Foto11.jpeg">
-</div>
-</div>
+    <!-- FOTO KANAN -->
+    <div class="sidebar">
+        <div class="sidebar-track">
+            <img src="Foto8.jpeg">
+            <img src="Foto9.jpeg">
+            <img src="Foto10.jpeg">
+            <img src="Foto11.jpeg">
+            <img src="Foto12.jpeg">
+            <img src="Foto13.jpeg">
+            <img src="Foto8.jpeg">
+            <img src="Foto9.jpeg">
+        </div>
+    </div>
 
 </div>
 
