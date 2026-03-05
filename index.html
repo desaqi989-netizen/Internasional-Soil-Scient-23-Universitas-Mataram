@@ -1,257 +1,272 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Internasional Soil Sciens</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Internasional Soil Sciens</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+<style>
+body{
+    margin:0;
+    background:#4b3222;
+    font-family:Arial, sans-serif;
+}
 
-    <style>
-        body {
-            margin: 0;
-            background-color: #4b3222;
-            font-family: Arial, sans-serif;
-        }
+/* ===================== DESKTOP ONLY ===================== */
+.desktop{
+    display:block;
+}
+.mobile{
+    display:none;
+}
 
-        /* ================= DESKTOP (TIDAK DIUBAH) ================= */
+.hero-desktop{
+    position:relative;
+    height:60vh;
+    overflow:hidden;
+}
+.hero-desktop img{
+    width:100%;
+    height:250%;
+    object-fit:cover;
+    filter:brightness(65%);
+    animation:gerakDesktop 4s ease-in-out infinite alternate;
+}
+@keyframes gerakDesktop{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-600px);}
+}
 
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 60vh;
-            overflow: hidden;
-        }
+.judul-desktop{
+    position:absolute;
+    bottom:40px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(123,79,44,0.85);
+    padding:15px 40px;
+    border-radius:25px;
+}
+.judul-desktop h1{
+    font-family:'Montserrat',sans-serif;
+    color:white;
+    font-size:30px;
+    margin:0;
+    text-transform:uppercase;
+}
 
-        .hero img {
-            width: 100%;
-            height: 250%;
-            object-fit: cover;
-            filter: brightness(65%);
-            animation: gerakAtasBawah 4s ease-in-out infinite alternate;
-        }
+.container-desktop{
+    display:flex;
+    justify-content:space-between;
+    width:90%;
+    margin:40px auto;
+}
+.sidebar-desktop{
+    width:200px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+.sidebar-desktop img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:18px;
+}
+.menu-desktop{
+    width:280px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+}
+.menu-desktop a{
+    width:220px;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-family:'Montserrat',sans-serif;
+    font-weight:900;
+    font-size:24px;
+    color:white;
+    background:#7b4f2c;
+    border-radius:40px;
+}
 
-        @keyframes gerakAtasBawah {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-600px); }
-        }
+/* ===================== MOBILE ONLY ===================== */
+@media(max-width:768px){
 
-        .judul-box {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(123, 79, 44, 0.85);
-            padding: 15px 40px;
-            border-radius: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        }
+.desktop{display:none;}
+.mobile{display:block;}
 
-        .judul {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 30px;
-            font-weight: 900;
-            letter-spacing: 2px;
-            color: white;
-            text-transform: uppercase;
-            margin: 0;
-            text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
-        }
+.hero-mobile{
+    position:relative;
+    height:65vh;
+    overflow:hidden;
+}
+.hero-mobile img{
+    width:100%;
+    height:180%;
+    object-fit:cover;
+    animation:gerakHP 3s ease-in-out infinite alternate;
+}
+@keyframes gerakHP{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-80px);}
+}
 
-        .container-side {
-            display: flex;
-            justify-content: space-between;
-            align-items: stretch;
-            width: 90%;
-            margin: 40px auto 60px auto;
-        }
+.judul-mobile{
+    position:absolute;
+    bottom:70px; /* NAIK */
+    left:50%;
+    transform:translateX(-50%);
+    background:#7b4f2c;
+    width:85%; /* FULL */
+    text-align:center;
+    padding:10px;
+    border-radius:15px;
+}
+.judul-mobile h1{
+    font-family:'Montserrat',sans-serif;
+    font-size:18px;
+    color:white;
+    margin:0;
+}
 
-        .sidebar {
-            width: 200px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+/* SCROLL FOTO CEPAT */
+.scroll{
+    overflow:hidden;
+    margin:25px 0;
+}
+.track{
+    display:flex;
+    gap:15px;
+    animation:scrollCepat 8s linear infinite;
+}
+.track img{
+    width:170px;
+    height:120px;
+    border-radius:18px;
+    object-fit:cover;
+    flex-shrink:0;
+}
+@keyframes scrollCepat{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+}
 
-        .sidebar img {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 18px;
-            box-shadow: 0 8px 18px rgba(0,0,0,0.5);
-        }
+.menu-mobile{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+    margin:40px 0;
+}
+.menu-mobile a{
+    width:85%;
+    height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-family:'Montserrat',sans-serif;
+    font-weight:900;
+    font-size:18px;
+    color:white;
+    background:#7b4f2c;
+    border-radius:35px;
+}
 
-        .menu-tengah {
-            width: 280px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .menu-tengah a {
-            width: 220px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 24px;
-            color: white;
-            background-color: #7b4f2c;
-            border-radius: 40px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-            transition: 0.3s;
-            letter-spacing: 2px;
-        }
-
-        .menu-tengah a:hover {
-            background-color: #a06a42;
-            transform: scale(1.08);
-        }
-
-        /* ================== KHUSUS HP ================== */
-
-        @media (max-width: 768px) {
-
-            /* HERO LEBIH PANJANG & FULL */
-            .hero {
-                height: 55vh;
-            }
-
-            .hero img {
-                height: 160%;
-                object-fit: cover;
-                animation: gerakHP 3s ease-in-out infinite alternate;
-            }
-
-            @keyframes gerakHP {
-                0% { transform: translateY(0); }
-                100% { transform: translateY(-60px); }
-            }
-
-            .judul-box {
-                width: 75%;
-                padding: 8px 12px;
-                bottom: 15px;
-                border-radius: 15px;
-            }
-
-            .judul {
-                font-size: 16px;
-                letter-spacing: 1px;
-                text-align: center;
-            }
-
-            .container-side {
-                flex-direction: column;
-                align-items: center;
-                gap: 30px;
-                width: 100%;
-                margin: 20px auto 40px auto;
-            }
-
-            /* SIDEBAR JADI HORIZONTAL */
-            .sidebar {
-                width: 100%;
-                overflow: hidden;
-                flex-direction: row;
-            }
-
-            .sidebar-track {
-                display: flex;
-                gap: 15px;
-                animation: autoScroll 12s linear infinite; /* DIPERCEPAT */
-            }
-
-            .sidebar img {
-                width: 160px;
-                height: 110px;
-                flex-shrink: 0;
-                border-radius: 18px;
-            }
-
-            @keyframes autoScroll {
-                from { transform: translateX(0); }
-                to { transform: translateX(-50%); }
-            }
-
-            .menu-tengah {
-                width: 100%;
-                gap: 20px;
-            }
-
-            .menu-tengah a {
-                width: 85%;
-                height: 55px;
-                font-size: 16px;
-                border-radius: 30px;
-            }
-        }
-    </style>
+}
+</style>
 </head>
-
 <body>
 
-    <div class="hero">
-        <img src="Foto1.jpeg">
-        <div class="judul-box">
-            <h1 class="judul">Internasional Soil Sciens</h1>
-        </div>
-    </div>
+<!-- ================= DESKTOP ================= -->
+<div class="desktop">
 
-    <div class="container-side">
+<div class="hero-desktop">
+<img src="Foto1.jpeg">
+<div class="judul-desktop">
+<h1>Internasional Soil Sciens</h1>
+</div>
+</div>
 
-        <!-- FOTO KIRI -->
-        <div class="sidebar">
-            <div class="sidebar-track">
-                <img src="Foto2.jpeg">
-                <img src="Foto3.jpeg">
-                <img src="Foto4.jpeg">
-                <img src="Foto5.jpeg">
-                <img src="Foto6.jpeg">
-                <img src="Foto7.jpeg">
+<div class="container-desktop">
+<div class="sidebar-desktop">
+<img src="Foto2.jpeg">
+<img src="Foto3.jpeg">
+<img src="Foto4.jpeg">
+<img src="Foto5.jpeg">
+<img src="Foto6.jpeg">
+<img src="Foto7.jpeg">
+</div>
 
-                <!-- DUPLIKAT HANYA UNTUK HP LOOP -->
-                <img src="Foto2.jpeg">
-                <img src="Foto3.jpeg">
-                <img src="Foto4.jpeg">
-                <img src="Foto5.jpeg">
-                <img src="Foto6.jpeg">
-                <img src="Foto7.jpeg">
-            </div>
-        </div>
+<div class="menu-desktop">
+<a href="#">Home</a>
+<a href="#">Timetable</a>
+<a href="#">Subject</a>
+</div>
 
-        <!-- MENU -->
-        <div class="menu-tengah">
-            <a href="#">Home</a>
-            <a href="#">Timetable</a>
-            <a href="#">Subject</a>
-        </div>
+<div class="sidebar-desktop">
+<img src="Foto8.jpeg">
+<img src="Foto9.jpeg">
+<img src="Foto10.jpeg">
+<img src="Foto11.jpeg">
+<img src="Foto12.jpeg">
+<img src="Foto13.jpeg">
+</div>
+</div>
+</div>
 
-        <!-- FOTO KANAN -->
-        <div class="sidebar">
-            <div class="sidebar-track">
-                <img src="Foto8.jpeg">
-                <img src="Foto9.jpeg">
-                <img src="Foto10.jpeg">
-                <img src="Foto11.jpeg">
-                <img src="Foto12.jpeg">
-                <img src="Foto13.jpeg">
+<!-- ================= MOBILE ================= -->
+<div class="mobile">
 
-                <!-- DUPLIKAT UNTUK HP LOOP -->
-                <img src="Foto8.jpeg">
-                <img src="Foto9.jpeg">
-                <img src="Foto10.jpeg">
-                <img src="Foto11.jpeg">
-                <img src="Foto12.jpeg">
-                <img src="Foto13.jpeg">
-            </div>
-        </div>
+<div class="hero-mobile">
+<img src="Foto1.jpeg">
+<div class="judul-mobile">
+<h1>Internasional Soil Sciens</h1>
+</div>
+</div>
 
-    </div>
+<div class="scroll">
+<div class="track">
+<img src="Foto2.jpeg">
+<img src="Foto3.jpeg">
+<img src="Foto4.jpeg">
+<img src="Foto5.jpeg">
+<img src="Foto6.jpeg">
+<img src="Foto7.jpeg">
+<img src="Foto2.jpeg">
+<img src="Foto3.jpeg">
+<img src="Foto4.jpeg">
+<img src="Foto5.jpeg">
+</div>
+</div>
+
+<div class="menu-mobile">
+<a href="#">Home</a>
+<a href="#">Timetable</a>
+<a href="#">Subject</a>
+</div>
+
+<div class="scroll">
+<div class="track">
+<img src="Foto8.jpeg">
+<img src="Foto9.jpeg">
+<img src="Foto10.jpeg">
+<img src="Foto11.jpeg">
+<img src="Foto12.jpeg">
+<img src="Foto13.jpeg">
+<img src="Foto8.jpeg">
+<img src="Foto9.jpeg">
+<img src="Foto10.jpeg">
+<img src="Foto11.jpeg">
+</div>
+</div>
+
+</div>
 
 </body>
 </html>
