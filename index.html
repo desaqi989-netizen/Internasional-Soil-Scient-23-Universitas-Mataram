@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Internasional Soil Sciens</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
-
 <style>
 body{
     margin:0;
@@ -101,25 +94,22 @@ body{
 @media(max-width:768px){
 
 .hero{
-    height:65vh;
+    height:auto; /* ikut tinggi asli foto */
+    overflow:visible;
 }
 
 .hero img{
     width:100%;
-    height:100%;
-    object-fit:contain; /* supaya semua foto terlihat */
-    background:#4b3222;
-    animation:gerakHP 5s ease-in-out infinite alternate;
-}
-
-@keyframes gerakHP{
-    0%{transform:translateY(0);}
-    100%{transform:translateY(-40px);}
+    height:auto; /* supaya full terlihat semua */
+    object-fit:contain; /* tidak crop */
+    filter:brightness(65%);
+    animation:none; /* biar tidak geser dan tidak kepotong */
+    display:block;
 }
 
 .judul-box{
     width:85%;
-    bottom:60px;
+    bottom:30px;
     padding:10px;
 }
 
@@ -173,56 +163,4 @@ body{
 }
 
 }
-
 </style>
-</head>
-<body>
-
-<div class="hero">
-    <img src="Foto1.jpeg">
-    <div class="judul-box">
-        <h1 class="judul">Internasional Soil Sciens</h1>
-    </div>
-</div>
-
-<div class="container">
-
-    <!-- FOTO KIRI -->
-    <div class="sidebar">
-        <div class="sidebar-track">
-            <img src="Foto2.jpeg">
-            <img src="Foto3.jpeg">
-            <img src="Foto4.jpeg">
-            <img src="Foto5.jpeg">
-            <img src="Foto6.jpeg">
-            <img src="Foto7.jpeg">
-            <img src="Foto2.jpeg">
-            <img src="Foto3.jpeg">
-        </div>
-    </div>
-
-    <!-- MENU -->
-    <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Timetable</a>
-        <a href="#">Subject</a>
-    </div>
-
-    <!-- FOTO KANAN -->
-    <div class="sidebar">
-        <div class="sidebar-track">
-            <img src="Foto8.jpeg">
-            <img src="Foto9.jpeg">
-            <img src="Foto10.jpeg">
-            <img src="Foto11.jpeg">
-            <img src="Foto12.jpeg">
-            <img src="Foto13.jpeg">
-            <img src="Foto8.jpeg">
-            <img src="Foto9.jpeg">
-        </div>
-    </div>
-
-</div>
-
-</body>
-</html>
