@@ -93,23 +93,24 @@ body{
 
 @media(max-width:768px){
 
+/* HERO KHUSUS HP */
 .hero{
-    height:auto; /* ikut tinggi asli foto */
-    overflow:visible;
+    height:auto; /* tinggi mengikuti foto */
 }
 
 .hero img{
     width:100%;
-    height:auto; /* supaya full terlihat semua */
-    object-fit:contain; /* tidak crop */
+    height:auto; /* supaya full terlihat */
+    object-fit:cover; /* isi penuh tanpa coklat */
     filter:brightness(65%);
-    animation:none; /* biar tidak geser dan tidak kepotong */
+    animation:none; /* matikan animasi biar tidak geser */
     display:block;
 }
 
+/* JUDUL */
 .judul-box{
     width:85%;
-    bottom:30px;
+    bottom:40px;
     padding:10px;
 }
 
